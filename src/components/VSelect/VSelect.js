@@ -373,7 +373,7 @@ export default {
       return true
     },
     filterDuplicates (arr) {
-      const val = this.returnObject ? this.getValue : el => el
+      const val = this.returnObject ? el => el : this.getValue
       return arr.filter((el, i, self) => i === self.findIndex(e => val(e) === val(el)))
     },
     focus () {
